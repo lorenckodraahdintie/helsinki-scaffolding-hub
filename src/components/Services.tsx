@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Building, Construction, Hammer, Wrench, Ladder, Truck } from 'lucide-react';
+import { Building, Construction, Hammer, Wrench, HardHat, Truck } from 'lucide-react';
 
 const ServiceCard = ({ title, description, icon: Icon }) => (
   <div className="bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-lg border border-gray-100">
@@ -30,7 +30,7 @@ const Services = () => {
       description: "Heavy-duty industrial scaffolding systems for factories, power plants, and manufacturing facilities."
     },
     {
-      icon: Ladder,
+      icon: HardHat,
       title: "Residential Services",
       description: "Safe and reliable scaffolding for home renovations, roof repairs, and exterior maintenance projects."
     },
