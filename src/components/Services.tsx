@@ -16,33 +16,33 @@ const Services = () => {
   const services = [
     {
       icon: Building,
-      title: "Construction Scaffolding",
-      description: "Complete scaffolding solutions for new building projects of all sizes, from residential to commercial structures."
+      title: "Rakennustelineet",
+      description: "Täydelliset telinepalvelut kaikenkokoisiin uudisrakennusprojekteihin, pientaloista kaupallisiin rakennuksiin."
     },
     {
       icon: Construction,
-      title: "Renovation Support",
-      description: "Specialized scaffolding for renovation projects, facade work, and historic building restorations throughout Helsinki."
+      title: "Saneerauskohteet",
+      description: "Erikoistuneet telinepalvelut saneerauskohteisiin, julkisivutöihin ja historiallisten rakennusten restaurointiin Helsingissä."
     },
     {
       icon: Hammer,
-      title: "Industrial Scaffolding",
-      description: "Heavy-duty industrial scaffolding systems for factories, power plants, and manufacturing facilities."
+      title: "Teollisuuskohteet",
+      description: "Raskaan sarjan telinepalvelut tehtaisiin, voimalaitoksiin ja tuotantolaitoksiin."
     },
     {
       icon: HardHat,
-      title: "Residential Services",
-      description: "Safe and reliable scaffolding for home renovations, roof repairs, and exterior maintenance projects."
+      title: "Pientalopalvelut",
+      description: "Turvalliset ja luotettavat telinepalvelut omakotitalojen remontointiin, kattotöihin ja julkisivuhuoltoihin."
     },
     {
       icon: Wrench,
-      title: "Maintenance Access",
-      description: "Temporary access solutions for maintenance work on commercial buildings, hospitals, and public facilities."
+      title: "Huoltotyöt",
+      description: "Tilapäiset telinepalvelut huoltotöihin liike- ja toimistorakennuksissa, sairaaloissa ja julkisissa tiloissa."
     },
     {
       icon: Truck,
-      title: "Emergency Services",
-      description: "Rapid response scaffolding for emergency repairs and time-sensitive construction needs across the Helsinki region."
+      title: "Hätäpalvelut",
+      description: "Nopean toiminnan telinepalvelut hätäkorjauksiin ja aikaa vaativiin rakennustarpeisiin koko pääkaupunkiseudulla."
     }
   ];
 
@@ -50,9 +50,9 @@ const Services = () => {
     <section id="services" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="mb-4">Our Scaffolding Services</h2>
+          <h2 className="mb-4">Telinepalvelumme</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We provide comprehensive scaffolding solutions for projects of all sizes throughout Helsinki and surrounding areas.
+            Tarjoamme kattavia telinepalveluja kaikenkokoisiin projekteihin Helsingissä ja lähialueilla.
           </p>
         </div>
         

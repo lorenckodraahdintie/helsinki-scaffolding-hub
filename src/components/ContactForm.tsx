@@ -24,8 +24,8 @@ const ContactForm = () => {
     console.log('Form submitted:', formData);
     
     toast({
-      title: "Quote Request Submitted",
-      description: "Thank you! We'll contact you within 24 hours.",
+      title: "Tarjouspyyntö lähetetty",
+      description: "Kiitos! Otamme sinuun yhteyttä 24 tunnin kuluessa.",
     });
     
     // Reset form
@@ -43,32 +43,32 @@ const ContactForm = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="mb-4">Request a Free Quote</h2>
+            <h2 className="mb-4">Pyydä ilmainen tarjous</h2>
             <p className="text-xl text-gray-600">
-              Tell us about your project, and we'll provide a comprehensive scaffolding solution tailored to your needs.
+              Kerro meille projektistasi, niin tarjoamme kattavan telinepalveluratkaisun juuri sinun tarpeisiisi.
             </p>
           </div>
           
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
             <div className="grid md:grid-cols-2">
               <div className="bg-primary p-8 md:p-12 text-white">
-                <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
+                <h3 className="text-2xl font-bold mb-6">Yhteystiedot</h3>
                 <div className="space-y-6">
                   <div>
-                    <p className="text-white/80 mb-1">Address</p>
+                    <p className="text-white/80 mb-1">Osoite</p>
                     <p className="font-medium">Teollisuuskatu 23, 00510 Helsinki</p>
                   </div>
                   <div>
-                    <p className="text-white/80 mb-1">Phone</p>
+                    <p className="text-white/80 mb-1">Puhelin</p>
                     <p className="font-medium">+358 40 123 4567</p>
                   </div>
                   <div>
-                    <p className="text-white/80 mb-1">Email</p>
-                    <p className="font-medium">info@helsinkiscaffold.fi</p>
+                    <p className="text-white/80 mb-1">Sähköposti</p>
+                    <p className="font-medium">info@multeoy.fi</p>
                   </div>
                   <div>
-                    <p className="text-white/80 mb-1">Hours</p>
-                    <p className="font-medium">Monday-Friday: 8am - 5pm</p>
+                    <p className="text-white/80 mb-1">Aukioloajat</p>
+                    <p className="font-medium">Maanantai-Perjantai: 8:00 - 17:00</p>
                   </div>
                 </div>
               </div>
@@ -76,7 +76,7 @@ const ContactForm = () => {
               <div className="p-8 md:p-12">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Nimi</label>
                     <input
                       type="text"
                       id="name"
@@ -90,7 +90,7 @@ const ContactForm = () => {
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Sähköposti</label>
                       <input
                         type="email"
                         id="email"
@@ -102,7 +102,7 @@ const ContactForm = () => {
                       />
                     </div>
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Puhelin</label>
                       <input
                         type="tel"
                         id="phone"
@@ -115,7 +115,7 @@ const ContactForm = () => {
                   </div>
                   
                   <div>
-                    <label htmlFor="projectType" className="block text-sm font-medium text-gray-700 mb-1">Project Type</label>
+                    <label htmlFor="projectType" className="block text-sm font-medium text-gray-700 mb-1">Projektin tyyppi</label>
                     <select
                       id="projectType"
                       name="projectType"
@@ -123,18 +123,18 @@ const ContactForm = () => {
                       onChange={handleChange}
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
                     >
-                      <option value="">Select a project type</option>
-                      <option value="construction">New Construction</option>
-                      <option value="renovation">Renovation</option>
-                      <option value="industrial">Industrial</option>
-                      <option value="residential">Residential</option>
-                      <option value="maintenance">Maintenance</option>
-                      <option value="emergency">Emergency</option>
+                      <option value="">Valitse projektin tyyppi</option>
+                      <option value="construction">Uudisrakennus</option>
+                      <option value="renovation">Saneeraus</option>
+                      <option value="industrial">Teollisuus</option>
+                      <option value="residential">Pientalo</option>
+                      <option value="maintenance">Huoltotyö</option>
+                      <option value="emergency">Hätätapaus</option>
                     </select>
                   </div>
                   
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Project Details</label>
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Projektin tiedot</label>
                     <textarea
                       id="message"
                       name="message"
@@ -146,7 +146,7 @@ const ContactForm = () => {
                   </div>
                   
                   <Button type="submit" className="w-full bg-primary hover:bg-primary/90 btn-hover-effect">
-                    Submit Request
+                    Lähetä tarjouspyyntö
                   </Button>
                 </form>
               </div>

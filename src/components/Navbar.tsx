@@ -16,18 +16,18 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <a href="#" className="text-2xl font-bold text-primary">
-              Helsinki<span className="text-secondary">Scaffold</span>
+              Multe<span className="text-secondary">Oy</span>
             </a>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-gray-700 hover:text-primary font-medium">Home</a>
-            <a href="#services" className="text-gray-700 hover:text-primary font-medium">Services</a>
-            <a href="#about" className="text-gray-700 hover:text-primary font-medium">About Us</a>
-            <a href="#contact" className="text-gray-700 hover:text-primary font-medium">Contact</a>
+            <a href="#" className="text-gray-700 hover:text-primary font-medium">Etusivu</a>
+            <a href="#services" className="text-gray-700 hover:text-primary font-medium">Palvelut</a>
+            <a href="#about" className="text-gray-700 hover:text-primary font-medium">Meistä</a>
+            <a href="#contact" className="text-gray-700 hover:text-primary font-medium">Yhteystiedot</a>
             <Button className="bg-primary hover:bg-primary/90 text-white btn-hover-effect">
-              Get Quote
+              Pyydä tarjous
             </Button>
           </nav>
 
@@ -42,12 +42,12 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 space-y-4">
-            <a href="#" className="block text-gray-700 hover:text-primary font-medium py-2">Home</a>
-            <a href="#services" className="block text-gray-700 hover:text-primary font-medium py-2">Services</a>
-            <a href="#about" className="block text-gray-700 hover:text-primary font-medium py-2">About Us</a>
-            <a href="#contact" className="block text-gray-700 hover:text-primary font-medium py-2">Contact</a>
+            <a href="#" className="block text-gray-700 hover:text-primary font-medium py-2">Etusivu</a>
+            <a href="#services" className="block text-gray-700 hover:text-primary font-medium py-2">Palvelut</a>
+            <a href="#about" className="block text-gray-700 hover:text-primary font-medium py-2">Meistä</a>
+            <a href="#contact" className="block text-gray-700 hover:text-primary font-medium py-2">Yhteystiedot</a>
             <Button className="w-full bg-primary hover:bg-primary/90 text-white btn-hover-effect">
-              Get Quote
+              Pyydä tarjous
             </Button>
           </nav>
         )}

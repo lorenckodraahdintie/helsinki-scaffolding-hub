@@ -21,33 +21,33 @@ const WhyChooseUs = () => {
   const features = [
     {
       number: "01",
-      title: "Safety First Approach",
-      description: "Our scaffolding systems meet the highest Finnish and European safety standards, with regular inspections and certifications."
+      title: "Turvallisuus ensin",
+      description: "Telinepalvelumme täyttävät korkeimmat suomalaiset ja eurooppalaiset turvallisuusstandardit, säännöllisine tarkastuksineen ja sertifikaatteineen."
     },
     {
       number: "02",
-      title: "Experienced Team",
-      description: "Our scaffolding professionals have 15+ years of experience working in Helsinki's unique construction environment."
+      title: "Kokenut tiimi",
+      description: "Ammattilaisillamme on yli 15 vuoden kokemus Helsingin ainutlaatuisessa rakennusympäristössä."
     },
     {
       number: "03",
-      title: "Finnish Weather Expertise",
-      description: "We design our scaffolding to withstand Finland's harsh winters and varying weather conditions year-round."
+      title: "Suomen sääolosuhteiden asiantuntijat",
+      description: "Suunnittelemme telineemme kestämään Suomen ankaria talvia ja vaihtelevia sääolosuhteita ympäri vuoden."
     },
     {
       number: "04",
-      title: "Custom Solutions",
-      description: "We provide tailored scaffolding designs for each project, adapting to unique architectural challenges."
+      title: "Räätälöidyt ratkaisut",
+      description: "Tarjoamme yksilöllisiä telinesuunnitelmia jokaiseen projektiin, mukautuen ainutlaatuisiin arkkitehtuurisiin haasteisiin."
     },
     {
       number: "05",
-      title: "Fast Installation",
-      description: "Our efficient teams minimize project delays with quick assembly and disassembly of scaffolding systems."
+      title: "Nopea asennus",
+      description: "Tehokkaat tiimimme minimoivat projektiviivästykset telinejärjestelmien nopealla kokoamisella ja purkamisella."
     },
     {
       number: "06",
-      title: "24/7 Support",
-      description: "We offer around-the-clock customer service and emergency scaffolding solutions when needed."
+      title: "24/7 Tuki",
+      description: "Tarjoamme ympärivuorokautista asiakaspalvelua ja hätätelinepalveluja tarvittaessa."
     }
   ];
 
@@ -56,14 +56,14 @@ const WhyChooseUs = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center">
           <div className="lg:w-1/2 lg:pr-12 mb-10 lg:mb-0">
-            <h2 className="mb-6">Why Choose Our Helsinki Scaffolding Services</h2>
+            <h2 className="mb-6">Miksi valita Multe Oy:n telinepalvelut?</h2>
             <p className="text-xl text-gray-600 mb-8">
-              With over 20 years of experience serving the Greater Helsinki area, we've built our reputation on safety, quality, and reliability.
+              Yli 20 vuoden kokemuksella pääkaupunkiseudulla, olemme rakentaneet maineemme turvallisuuden, laadun ja luotettavuuden varaan.
             </p>
             <div className="relative h-80 md:h-96 w-full overflow-hidden rounded-lg shadow-xl">
               <img 
                 src="https://images.unsplash.com/photo-1486718448742-163732cd1544?auto=format&fit=crop&w=800&q=80" 
-                alt="Scaffolding project in Helsinki" 
+                alt="Telineprojekti Helsingissä" 
                 className="object-cover h-full w-full"
               />
             </div>

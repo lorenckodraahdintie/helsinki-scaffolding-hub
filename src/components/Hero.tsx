@@ -13,17 +13,17 @@ const Hero = () => {
       <div className="container mx-auto px-4 z-10 relative">
         <div className="max-w-3xl">
           <h1 className="text-white mb-6 leading-tight">
-            Professional Scaffolding Solutions in Helsinki
+            Ammattimaiset telinepalvelut Helsingissä
           </h1>
           <p className="text-white/90 text-xl mb-8 max-w-2xl">
-            Safe, reliable, and efficient scaffolding services for construction, renovation, and maintenance projects across Finland's capital.
+            Turvallisia, luotettavia ja tehokkaita telinepalveluja rakennustyömaille, saneerauksiin ja huoltotöihin pääkaupunkiseudulla.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button size="lg" className="bg-primary hover:bg-primary/90 text-white btn-hover-effect">
-              Request a Quote
+              Pyydä tarjous
             </Button>
             <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur border-white text-white hover:bg-white/20 btn-hover-effect">
-              Our Services
+              Palvelumme
             </Button>
           </div>
         </div>
