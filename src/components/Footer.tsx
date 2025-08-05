@@ -14,20 +14,20 @@ const Footer = () => {
           <div>
             <h4 className="text-xl font-bold mb-6">Palvelut</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Rakennustelineet</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Saneerauskohteet</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Teollisuuskohteet</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Pientalopalvelut</a></li>
+              <li><a href="/#services" className="text-gray-400 hover:text-white transition-colors">Rakennustelineet</a></li>
+              <li><a href="/#services" className="text-gray-400 hover:text-white transition-colors">Saneerauskohteet</a></li>
+              <li><a href="/#services" className="text-gray-400 hover:text-white transition-colors">Teollisuuskohteet</a></li>
+              <li><a href="/#services" className="text-gray-400 hover:text-white transition-colors">Pientalopalvelut</a></li>
             </ul>
           </div>
           
           <div>
             <h4 className="text-xl font-bold mb-6">Yritys</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Meistä</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Tiimimme</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Työpaikat</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Turvallisuusstandardit</a></li>
+              <li><a href="/about" className="text-gray-400 hover:text-white transition-colors">Meistä</a></li>
+              <li><a href="/team" className="text-gray-400 hover:text-white transition-colors">Tiimimme</a></li>
+              <li><a href="/jobs" className="text-gray-400 hover:text-white transition-colors">Työpaikat</a></li>
+              <li><a href="/safety" className="text-gray-400 hover:text-white transition-colors">Turvallisuusstandardit</a></li>
             </ul>
           </div>
           
@@ -47,8 +47,8 @@ const Footer = () => {
             &copy; {currentYear} Multe Oy. Kaikki oikeudet pidätetään.
           </p>
           <div className="flex space-x-6">
-            <a href="#" className="text-gray-500 hover:text-white transition-colors">Tietosuojakäytäntö</a>
-            <a href="#" className="text-gray-500 hover:text-white transition-colors">Käyttöehdot</a>
+            <a href="/privacy" className="text-gray-500 hover:text-white transition-colors">Tietosuojakäytäntö</a>
+            <a href="/terms" className="text-gray-500 hover:text-white transition-colors">Käyttöehdot</a>
           </div>
         </div>
       </div>
