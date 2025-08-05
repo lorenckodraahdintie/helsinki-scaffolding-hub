@@ -1,10 +1,8 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-
 const Team = () => {
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Navbar />
       <main className="pt-16">
         <div className="bg-primary text-white py-20">
@@ -24,23 +22,23 @@ const Team = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div className="text-center">
                   <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4"></div>
-                  <h3 className="text-xl font-semibold mb-2">Matti Virtanen</h3>
+                  <h3 className="text-xl font-semibold mb-2">Ervin Kodra</h3>
                   <p className="text-gray-600 mb-2">Toimitusjohtaja</p>
-                  <p className="text-sm">20 vuoden kokemus rakennusalalta. Vastaa yrityksen strategisesta suunnasta ja asiakassuhteista.</p>
+                  <p className="text-sm">15 vuoden kokemus rakennusalalta. Vastaa yrityksen strategisesta suunnasta ja asiakassuhteista.</p>
                 </div>
                 
                 <div className="text-center">
                   <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4"></div>
-                  <h3 className="text-xl font-semibold mb-2">Jukka Koskinen</h3>
-                  <p className="text-gray-600 mb-2">Työmaapäällikkö</p>
-                  <p className="text-sm">15 vuoden kokemus telinetyöstä. Vastaa projektien toteutuksesta ja työmaan turvallisuudesta.</p>
+                  <h3 className="text-xl font-semibold mb-2">Halit Hasa</h3>
+                  <p className="text-gray-600 mb-2">Toimitusjohtaja / Työmaapäällikkö</p>
+                  <p className="text-sm">8 vuoden kokemus telinetyöstä. Vastaa projektien toteutuksesta ja työmaan turvallisuudesta.</p>
                 </div>
                 
                 <div className="text-center">
                   <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4"></div>
-                  <h3 className="text-xl font-semibold mb-2">Antti Laine</h3>
+                  <h3 className="text-xl font-semibold mb-2">Alban Selaci</h3>
                   <p className="text-gray-600 mb-2">Telineasentaja</p>
-                  <p className="text-sm">12 vuoden kokemus telineasennuksesta. Erikoisosaaja vaativissa teollisuuskohteissa.</p>
+                  <p className="text-sm">6 vuoden kokemus telineasennuksesta. Erikoisosaaja vaativissa teollisuuskohteissa.</p>
                 </div>
                 
                 <div className="text-center">
@@ -59,7 +57,7 @@ const Team = () => {
                 
                 <div className="text-center">
                   <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4"></div>
-                  <h3 className="text-xl font-semibold mb-2">Liisa Määttä</h3>
+                  <h3 className="text-xl font-semibold mb-2">Lorenc Kodra</h3>
                   <p className="text-gray-600 mb-2">Asiakaspalvelu</p>
                   <p className="text-sm">Hoitaa asiakaspalvelun ja tarjousten laatimisen. Ensimmäinen kontakti asiakkaille.</p>
                 </div>
@@ -69,8 +67,6 @@ const Team = () => {
         </div>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Team;
