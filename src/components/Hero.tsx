@@ -1,8 +1,11 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Hero = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="relative h-[90vh] md:h-[85vh] flex items-center" id="home">
       <div className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
@@ -13,17 +16,17 @@ const Hero = () => {
       <div className="container mx-auto px-4 z-10 relative">
         <div className="max-w-3xl">
           <h1 className="text-white mb-6 leading-tight">
-            Ammattimaiset telinepalvelut Helsingissä
+            {t('hero.title')}
           </h1>
           <p className="text-white/90 text-xl mb-8 max-w-2xl">
-            Turvallisia, luotettavia ja tehokkaita telinepalveluja rakennustyömaille, saneerauksiin ja huoltotöihin pääkaupunkiseudulla.
+            {t('hero.subtitle')}
           </p>
           <div className="flex flex-wrap gap-4">
             <Button size="lg" className="bg-primary hover:bg-primary/90 text-white btn-hover-effect">
-              Pyydä tarjous
+              {t('hero.quote-btn')}
             </Button>
             <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur border-white text-white hover:bg-white/20 btn-hover-effect">
-              Palvelumme
+              {t('hero.services-btn')}
             </Button>
           </div>
         </div>

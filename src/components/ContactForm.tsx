@@ -2,8 +2,10 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { toast } from "@/components/ui/use-toast";
+import { useLanguage } from '../contexts/LanguageContext';
 
 const ContactForm = () => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -24,8 +26,8 @@ const ContactForm = () => {
     console.log('Form submitted:', formData);
     
     toast({
-      title: "Tarjouspyyntö lähetetty",
-      description: "Kiitos! Otamme sinuun yhteyttä 24 tunnin kuluessa.",
+      title: t('toast.sent'),
+      description: t('toast.description'),
     });
     
     // Reset form
@@ -43,32 +45,32 @@ const ContactForm = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="mb-4">Pyydä ilmainen tarjous</h2>
+            <h2 className="mb-4">{t('contact.title')}</h2>
             <p className="text-xl text-gray-600">
-              Kerro meille projektistasi, niin tarjoamme kattavan telinepalveluratkaisun juuri sinun tarpeisiisi.
+              {t('contact.subtitle')}
             </p>
           </div>
           
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <div className="grid md:grid-cols-2">
+            <div className="grid lg:grid-cols-3">
               <div className="bg-primary p-8 md:p-12 text-white">
-                <h3 className="text-2xl font-bold mb-6">Yhteystiedot</h3>
+                <h3 className="text-2xl font-bold mb-6">{t('contact.info')}</h3>
                 <div className="space-y-6">
                   <div>
-                    <p className="text-white/80 mb-1">Osoite</p>
+                    <p className="text-white/80 mb-1">{t('contact.address')}</p>
                     <p className="font-medium">Teollisuuskatu 23, 00510 Helsinki</p>
                   </div>
                   <div>
-                    <p className="text-white/80 mb-1">Puhelin</p>
+                    <p className="text-white/80 mb-1">{t('contact.phone')}</p>
                     <p className="font-medium">+358 40 123 4567</p>
                   </div>
                   <div>
-                    <p className="text-white/80 mb-1">Sähköposti</p>
+                    <p className="text-white/80 mb-1">{t('contact.email')}</p>
                     <p className="font-medium">info@multeoy.fi</p>
                   </div>
                   <div>
-                    <p className="text-white/80 mb-1">Aukioloajat</p>
-                    <p className="font-medium">Maanantai-Perjantai: 8:00 - 17:00</p>
+                    <p className="text-white/80 mb-1">{t('contact.hours')}</p>
+                    <p className="font-medium">{t('contact.hours-value')}</p>
                   </div>
                 </div>
               </div>
@@ -76,7 +78,7 @@ const ContactForm = () => {
               <div className="p-8 md:p-12">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Nimi</label>
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">{t('contact.name')}</label>
                     <input
                       type="text"
                       id="name"
@@ -90,7 +92,7 @@ const ContactForm = () => {
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Sähköposti</label>
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">{t('contact.email')}</label>
                       <input
                         type="email"
                         id="email"
@@ -102,7 +104,7 @@ const ContactForm = () => {
                       />
                     </div>
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Puhelin</label>
+                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">{t('contact.phone')}</label>
                       <input
                         type="tel"
                         id="phone"
@@ -115,7 +117,7 @@ const ContactForm = () => {
                   </div>
                   
                   <div>
-                    <label htmlFor="projectType" className="block text-sm font-medium text-gray-700 mb-1">Projektin tyyppi</label>
+                    <label htmlFor="projectType" className="block text-sm font-medium text-gray-700 mb-1">{t('contact.project-type')}</label>
                     <select
                       id="projectType"
                       name="projectType"
@@ -123,18 +125,18 @@ const ContactForm = () => {
                       onChange={handleChange}
                       className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
                     >
-                      <option value="">Valitse projektin tyyppi</option>
-                      <option value="construction">Uudisrakennus</option>
-                      <option value="renovation">Saneeraus</option>
-                      <option value="industrial">Teollisuus</option>
-                      <option value="residential">Pientalo</option>
-                      <option value="maintenance">Huoltotyö</option>
-                      <option value="emergency">Hätätapaus</option>
+                      <option value="">{t('form.select-type')}</option>
+                      <option value="construction">{t('form.construction')}</option>
+                      <option value="renovation">{t('form.renovation')}</option>
+                      <option value="industrial">{t('form.industrial')}</option>
+                      <option value="residential">{t('form.residential')}</option>
+                      <option value="maintenance">{t('form.maintenance')}</option>
+                      <option value="emergency">{t('form.emergency')}</option>
                     </select>
                   </div>
                   
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Projektin tiedot</label>
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">{t('contact.project-details')}</label>
                     <textarea
                       id="message"
                       name="message"
@@ -146,9 +148,50 @@ const ContactForm = () => {
                   </div>
                   
                   <Button type="submit" className="w-full bg-primary hover:bg-primary/90 btn-hover-effect">
-                    Lähetä tarjouspyyntö
+                    {t('contact.send')}
                   </Button>
                 </form>
+              </div>
+              
+              <div className="bg-gray-50 p-8 md:p-12">
+                <h3 className="text-2xl font-bold mb-6 text-gray-900">{t('contact.billing')}</h3>
+                <div className="space-y-6 text-sm">
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">Verkkolaskut:</h4>
+                    <p className="text-gray-700 font-medium mb-2">Teline & sääsuojatekniikka TST Oy</p>
+                    <div className="space-y-1 text-gray-600">
+                      <p>Operaattori: Apix Messaging Oy (003723327487)</p>
+                      <p>Verkkolaskuosoite: 003724920872</p>
+                      <p>OVT-tunnus: 003724920872</p>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">Danske Bankin, Handelsbankenin, Paikallisosuuspankkien tai Säästöpankin asiakkaille:</h4>
+                    <div className="space-y-1 text-gray-600">
+                      <p>Verkkolaskuosoite: 003723327487</p>
+                      <p>Operaattoritunnus: DABAFIHH</p>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">Paperilaskut:</h4>
+                    <div className="space-y-1 text-gray-600">
+                      <p>Teline & sääsuojatekniikka TST Oy</p>
+                      <p>(Apix skannauspalvelu)</p>
+                      <p>PL 16112</p>
+                      <p>00021 LASKUTUS</p>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-md">
+                    <p className="text-xs text-gray-700 leading-relaxed">
+                      Pyydämme huomioimaan, että laskulla on TST:n yhteyshenkilön nimi tai meidän viitteemme sekä laskuun kuuluvat liitteet. 
+                      Nämä toimenpiteet helpottavat laskujen käsittelyä meillä merkittävästi. Ilman näitä tietoja olevat laskut palautetaan, 
+                      emmekä tällöin vastaa mahdollisista viivästys- tai muista kuluista.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

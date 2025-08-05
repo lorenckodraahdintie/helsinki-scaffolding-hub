@@ -1,13 +1,19 @@
 
 import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const toggleLanguage = () => {
+    setLanguage(language === 'fi' ? 'en' : 'fi');
   };
 
   return (
@@ -22,12 +28,19 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-gray-700 hover:text-primary font-medium">Etusivu</a>
-            <a href="#services" className="text-gray-700 hover:text-primary font-medium">Palvelut</a>
-            <a href="#about" className="text-gray-700 hover:text-primary font-medium">Meistä</a>
-            <a href="#contact" className="text-gray-700 hover:text-primary font-medium">Yhteystiedot</a>
+            <a href="#" className="text-gray-700 hover:text-primary font-medium">{t('nav.home')}</a>
+            <a href="#services" className="text-gray-700 hover:text-primary font-medium">{t('nav.services')}</a>
+            <a href="#about" className="text-gray-700 hover:text-primary font-medium">{t('nav.about')}</a>
+            <a href="#contact" className="text-gray-700 hover:text-primary font-medium">{t('nav.contact')}</a>
+            <button 
+              onClick={toggleLanguage}
+              className="flex items-center space-x-1 text-gray-700 hover:text-primary font-medium"
+            >
+              <Globe size={16} />
+              <span>{language.toUpperCase()}</span>
+            </button>
             <Button className="bg-primary hover:bg-primary/90 text-white btn-hover-effect">
-              Pyydä tarjous
+              {t('nav.quote')}
             </Button>
           </nav>
 
@@ -42,12 +55,19 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 space-y-4">
-            <a href="#" className="block text-gray-700 hover:text-primary font-medium py-2">Etusivu</a>
-            <a href="#services" className="block text-gray-700 hover:text-primary font-medium py-2">Palvelut</a>
-            <a href="#about" className="block text-gray-700 hover:text-primary font-medium py-2">Meistä</a>
-            <a href="#contact" className="block text-gray-700 hover:text-primary font-medium py-2">Yhteystiedot</a>
+            <a href="#" className="block text-gray-700 hover:text-primary font-medium py-2">{t('nav.home')}</a>
+            <a href="#services" className="block text-gray-700 hover:text-primary font-medium py-2">{t('nav.services')}</a>
+            <a href="#about" className="block text-gray-700 hover:text-primary font-medium py-2">{t('nav.about')}</a>
+            <a href="#contact" className="block text-gray-700 hover:text-primary font-medium py-2">{t('nav.contact')}</a>
+            <button 
+              onClick={toggleLanguage}
+              className="flex items-center space-x-1 text-gray-700 hover:text-primary font-medium py-2"
+            >
+              <Globe size={16} />
+              <span>{language.toUpperCase()}</span>
+            </button>
             <Button className="w-full bg-primary hover:bg-primary/90 text-white btn-hover-effect">
-              Pyydä tarjous
+              {t('nav.quote')}
             </Button>
           </nav>
         )}
