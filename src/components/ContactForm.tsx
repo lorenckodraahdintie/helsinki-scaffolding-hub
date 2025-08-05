@@ -107,10 +107,7 @@ const ContactForm = () => {
                     </select>
                   </div>
                   
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">{t('contact.project-details')}</label>
-                    <textarea id="message" name="message" rows={4} value={formData.message} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"></textarea>
-                  </div>
+                  
                   
                   <Button type="submit" className="w-full bg-primary hover:bg-primary/90 btn-hover-effect">
                     {t('contact.send')}
