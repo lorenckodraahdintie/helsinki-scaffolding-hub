@@ -39,7 +39,10 @@ const Navbar = () => {
               <Globe size={16} />
               <span>{language.toUpperCase()}</span>
             </button>
-            <Button className="bg-primary hover:bg-primary/90 text-white btn-hover-effect">
+            <Button 
+              className="bg-primary hover:bg-primary/90 text-white btn-hover-effect"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               {t('nav.quote')}
             </Button>
           </nav>
@@ -66,7 +69,10 @@ const Navbar = () => {
               <Globe size={16} />
               <span>{language.toUpperCase()}</span>
             </button>
-            <Button className="w-full bg-primary hover:bg-primary/90 text-white btn-hover-effect">
+            <Button 
+              className="w-full bg-primary hover:bg-primary/90 text-white btn-hover-effect"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               {t('nav.quote')}
             </Button>
           </nav>
