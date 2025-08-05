@@ -1,10 +1,8 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-
 const Safety = () => {
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Navbar />
       <main className="pt-16">
         <div className="bg-primary text-white py-20">
@@ -23,10 +21,7 @@ const Safety = () => {
             <div className="max-w-4xl mx-auto">
               <section className="mb-12">
                 <h2 className="text-3xl font-bold mb-6">Turvallisuusperiaatteet</h2>
-                <p className="text-lg mb-6">
-                  Morte Oy sitoutuu ylläpitämään korkeimpia turvallisuusstandardeja kaikissa projekteissaan. 
-                  Turvallisuus ei ole meille vain sääntöjen noudattamista, vaan se on osa työkulttuuria ja jokapäiväistä toimintaa.
-                </p>
+                <p className="text-lg mb-6">Multe Oy sitoutuu ylläpitämään korkeimpia turvallisuusstandardeja kaikissa projekteissaan. Turvallisuus ei ole meille vain sääntöjen noudattamista, vaan se on osa työkulttuuria ja jokapäiväistä toimintaa.</p>
                 
                 <div className="grid md:grid-cols-2 gap-8 mb-8">
                   <div className="p-6 border-l-4 border-primary bg-gray-50">
@@ -101,8 +96,6 @@ const Safety = () => {
         </div>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Safety;
