@@ -1,11 +1,7 @@
-
 import React from 'react';
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
-  return (
-    <footer className="bg-gray-900 text-white">
+  return <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
           <div>
@@ -38,9 +34,9 @@ const Footer = () => {
           <div>
             <h4 className="text-xl font-bold mb-6">Yhteystiedot</h4>
             <address className="not-italic text-gray-400">
-              <p className="mb-2">Teollisuuskatu 23</p>
-              <p className="mb-2">00510 Helsinki</p>
-              <p className="mb-2">+358 40 123 4567</p>
+              <p className="mb-2">Lumikero 6 D 42</p>
+              <p className="mb-2">01280 Vantaa</p>
+              <p className="mb-2">+358 451509570</p>
               <p className="mb-2">info@multeoy.fi</p>
             </address>
           </div>
@@ -56,8 +52,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
