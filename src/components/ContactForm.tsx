@@ -101,9 +101,9 @@ const ContactForm = () => {
                       <option value="construction">{t('form.construction')}</option>
                       <option value="renovation">{t('form.renovation')}</option>
                       <option value="industrial">{t('form.industrial')}</option>
-                      <option value="residential">{t('form.residential')}</option>
+                      
                       <option value="maintenance">{t('form.maintenance')}</option>
-                      <option value="emergency">{t('form.emergency')}</option>
+                      
                     </select>
                   </div>
                   
