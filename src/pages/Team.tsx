@@ -43,14 +43,16 @@ const Team = () => {
                 
                 <div className="text-center">
                   <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4"></div>
-                  <h3 className="text-xl font-semibold mb-2">Mikko Järvinen</h3>
+                  <h3 className="text-xl font-semibold mb-2">Klinton Koceku</h3>
                   <p className="text-gray-600 mb-2">Telineasentaja</p>
-                  <p className="text-sm">8 vuoden kokemus. Vastaa pientalojen ja saneerauskohteiden telineistä.</p>
+                  <p className="text-sm">4 vuoden kokemus. Vastaa pientalojen ja saneerauskohteiden telineistä.</p>
                 </div>
                 
                 <div className="text-center">
                   <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4"></div>
-                  <h3 className="text-xl font-semibold mb-2">Timo Hakala</h3>
+                  <h3 className="text-xl font-semibold mb-2">Besim Hyseni
+
+                </h3>
                   <p className="text-gray-600 mb-2">Telineasentaja</p>
                   <p className="text-sm">10 vuoden kokemus telinetyöstä. Kokenut ammattilainen kaikenlaisissa projekteissa.</p>
                 </div>
