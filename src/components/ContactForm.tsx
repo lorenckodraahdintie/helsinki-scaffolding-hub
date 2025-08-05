@@ -1,11 +1,11 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { toast } from "@/components/ui/use-toast";
 import { useLanguage } from '../contexts/LanguageContext';
-
 const ContactForm = () => {
-  const { t } = useLanguage();
+  const {
+    t
+  } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -13,23 +13,26 @@ const ContactForm = () => {
     projectType: '',
     message: ''
   });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+  const handleChange = e => {
+    const {
+      name,
+      value
+    } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
-    
+
     // In a real implementation, this would send the data to a backend
     console.log('Form submitted:', formData);
-    
     toast({
       title: t('toast.sent'),
-      description: t('toast.description'),
+      description: t('toast.description')
     });
-    
+
     // Reset form
     setFormData({
       name: '',
@@ -39,9 +42,7 @@ const ContactForm = () => {
       message: ''
     });
   };
-
-  return (
-    <section id="contact" className="py-20 bg-gray-50">
+  return <section id="contact" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
@@ -58,11 +59,11 @@ const ContactForm = () => {
                 <div className="space-y-6">
                   <div>
                     <p className="text-white/80 mb-1">{t('contact.address')}</p>
-                    <p className="font-medium">Teollisuuskatu 23, 00510 Helsinki</p>
+                    <p className="font-medium">Lumikero 6 D 42, 01280 Helsinki</p>
                   </div>
                   <div>
                     <p className="text-white/80 mb-1">{t('contact.phone')}</p>
-                    <p className="font-medium">+358 40 123 4567</p>
+                    <p className="font-medium">+358 451509570</p>
                   </div>
                   <div>
                     <p className="text-white/80 mb-1">{t('contact.email')}</p>
@@ -79,52 +80,23 @@ const ContactForm = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">{t('contact.name')}</label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
-                    />
+                    <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary" />
                   </div>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">{t('contact.email')}</label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
-                      />
+                      <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary" />
                     </div>
                     <div>
                       <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">{t('contact.phone')}</label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
-                      />
+                      <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary" />
                     </div>
                   </div>
                   
                   <div>
                     <label htmlFor="projectType" className="block text-sm font-medium text-gray-700 mb-1">{t('contact.project-type')}</label>
-                    <select
-                      id="projectType"
-                      name="projectType"
-                      value={formData.projectType}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
-                    >
+                    <select id="projectType" name="projectType" value={formData.projectType} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
                       <option value="">{t('form.select-type')}</option>
                       <option value="construction">{t('form.construction')}</option>
                       <option value="renovation">{t('form.renovation')}</option>
@@ -137,14 +109,7 @@ const ContactForm = () => {
                   
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">{t('contact.project-details')}</label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={4}
-                      value={formData.message}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
-                    ></textarea>
+                    <textarea id="message" name="message" rows={4} value={formData.message} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"></textarea>
                   </div>
                   
                   <Button type="submit" className="w-full bg-primary hover:bg-primary/90 btn-hover-effect">
@@ -158,11 +123,11 @@ const ContactForm = () => {
                 <div className="space-y-6 text-sm">
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Verkkolaskut:</h4>
-                    <p className="text-gray-700 font-medium mb-2">Teline & sääsuojatekniikka TST Oy</p>
+                    <p className="text-gray-700 font-medium mb-2">Multe Oy</p>
                     <div className="space-y-1 text-gray-600">
-                      <p>Operaattori: Apix Messaging Oy (003723327487)</p>
-                      <p>Verkkolaskuosoite: 003724920872</p>
-                      <p>OVT-tunnus: 003724920872</p>
+                      <p>Operaattori: Maventa (003721291126)</p>
+                      <p>Verkkolaskuosoite: 003723028022</p>
+                      <p>OVT-tunnus: 003723028022</p>
                     </div>
                   </div>
                   
@@ -177,19 +142,15 @@ const ContactForm = () => {
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Paperilaskut:</h4>
                     <div className="space-y-1 text-gray-600">
-                      <p>Teline & sääsuojatekniikka TST Oy</p>
+                      <p>Multe Oy</p>
                       <p>(Apix skannauspalvelu)</p>
-                      <p>PL 16112</p>
-                      <p>00021 LASKUTUS</p>
+                      <p>PL 100</p>
+                      <p>80020 Kollektor Scan</p>
                     </div>
                   </div>
                   
                   <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-md">
-                    <p className="text-xs text-gray-700 leading-relaxed">
-                      Pyydämme huomioimaan, että laskulla on TST:n yhteyshenkilön nimi tai meidän viitteemme sekä laskuun kuuluvat liitteet. 
-                      Nämä toimenpiteet helpottavat laskujen käsittelyä meillä merkittävästi. Ilman näitä tietoja olevat laskut palautetaan, 
-                      emmekä tällöin vastaa mahdollisista viivästys- tai muista kuluista.
-                    </p>
+                    <p className="text-xs text-gray-700 leading-relaxed">Pyydämme huomioimaan, että laskulla on Multe OY yhteyshenkilön nimi tai meidän viitteemme sekä laskuun kuuluvat liitteet. Nämä toimenpiteet helpottavat laskujen käsittelyä meillä merkittävästi. Ilman näitä tietoja olevat laskut palautetaan, emmekä tällöin vastaa mahdollisista viivästys- tai muista kuluista.</p>
                   </div>
                 </div>
               </div>
@@ -197,8 +158,6 @@ const ContactForm = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ContactForm;
