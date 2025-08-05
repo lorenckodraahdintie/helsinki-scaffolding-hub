@@ -22,10 +22,19 @@ const Hero = () => {
             {t('hero.subtitle')}
           </p>
           <div className="flex flex-wrap gap-4">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white btn-hover-effect">
+            <Button 
+              size="lg" 
+              className="bg-primary hover:bg-primary/90 text-white btn-hover-effect"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               {t('hero.quote-btn')}
             </Button>
-            <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur border-white text-white hover:bg-white/20 btn-hover-effect">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="bg-white/10 backdrop-blur border-white text-white hover:bg-white/20 btn-hover-effect"
+              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               {t('hero.services-btn')}
             </Button>
           </div>
