@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { toast } from "@/components/ui/use-toast";
 import { useLanguage } from '../contexts/LanguageContext';
+import { supabase } from "@/integrations/supabase/client";
 const ContactForm = () => {
   const {
     t
@@ -23,24 +24,39 @@ const ContactForm = () => {
       [name]: value
     }));
   };
-  const handleSubmit = e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // In a real implementation, this would send the data to a backend
-    console.log('Form submitted:', formData);
-    toast({
-      title: t('toast.sent'),
-      description: t('toast.description')
-    });
+    try {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData
+      });
 
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      projectType: '',
-      message: ''
-    });
+      if (error) {
+        throw error;
+      }
+
+      toast({
+        title: t('toast.sent'),
+        description: t('toast.description')
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        projectType: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive"
+      });
+    }
   };
   return <section id="contact" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -101,13 +117,22 @@ const ContactForm = () => {
                       <option value="construction">{t('form.construction')}</option>
                       <option value="renovation">{t('form.renovation')}</option>
                       <option value="industrial">{t('form.industrial')}</option>
-                      
                       <option value="maintenance">{t('form.maintenance')}</option>
-                      
                     </select>
                   </div>
                   
-                  
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">{t('contact.message')}</label>
+                    <textarea 
+                      id="message" 
+                      name="message" 
+                      value={formData.message} 
+                      onChange={handleChange} 
+                      rows={4}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
+                      placeholder={t('form.message-placeholder')}
+                    />
+                  </div>
                   
                   <Button type="submit" className="w-full bg-primary hover:bg-primary/90 btn-hover-effect">
                     {t('contact.send')}
