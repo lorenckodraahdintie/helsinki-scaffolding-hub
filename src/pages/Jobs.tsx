@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
+import JobApplicationForm from '@/components/JobApplicationForm';
 
 const Jobs = () => {
   return (
@@ -57,7 +58,9 @@ const Jobs = () => {
                       <li>Hyvä fyysinen kunto</li>
                       <li>Joustavuus ja luotettavuus</li>
                     </ul>
-                    <Button>Hae paikkaa</Button>
+                    <JobApplicationForm jobTitle="Kokenut telineasentaja">
+                      <Button>Hae paikkaa</Button>
+                    </JobApplicationForm>
                   </div>
                   
                   <div className="border rounded-lg p-6">
@@ -69,7 +72,9 @@ const Jobs = () => {
                       <li>Työturvallisuuskortti (voidaan hankkia työn ohessa)</li>
                       <li>Korkeantöiden sietokyky</li>
                     </ul>
-                    <Button>Hae paikkaa</Button>
+                    <JobApplicationForm jobTitle="Telineasentaja / aloittelija">
+                      <Button>Hae paikkaa</Button>
+                    </JobApplicationForm>
                   </div>
                 </div>
               </section>
@@ -80,7 +85,9 @@ const Jobs = () => {
                   Vaikka emme juuri nyt ilmoittaisi avointa paikkaa, otamme aina mielellään vastaan osaavien ammattilaisten hakemuksia.
                   Lähetä vapaamuotoinen hakemus ja CV sähköpostilla osoitteeseen info@multeoy.fi
                 </p>
-                <Button variant="outline">Lähetä avoin hakemus</Button>
+                <JobApplicationForm jobTitle="Avoin hakemus">
+                  <Button variant="outline">Lähetä avoin hakemus</Button>
+                </JobApplicationForm>
               </section>
             </div>
           </div>
