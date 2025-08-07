@@ -53,7 +53,7 @@ const ContactForm = () => {
           </div>
           
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <div className="grid lg:grid-cols-3">
+            <div className="grid grid-cols-1">
               <div className="bg-primary p-8 md:p-12 text-white">
                 <h3 className="text-2xl font-bold mb-6">{t('contact.info')}</h3>
                 <div className="space-y-6">
