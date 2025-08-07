@@ -39,7 +39,7 @@ const handler = async (req: Request): Promise<Response> => {
     `;
 
     const emailResponse = await resend.emails.send({
-      from: "Contact Form <onboarding@resend.dev>",
+      from: "Contact Form <noreply@multe.fi>",
       to: ["info@multe.fi"],
       subject: `New Contact Form Submission from ${formData.name}`,
       html: emailContent,
