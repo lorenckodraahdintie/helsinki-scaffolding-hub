@@ -37,7 +37,7 @@ const Footer = () => {
               <p className="mb-2">Lumikero 6 D 42</p>
               <p className="mb-2">01280 Vantaa</p>
               <p className="mb-2">+358 451509570</p>
-              <p className="mb-2">info@multeoy.fi</p>
+              <p className="mb-2">info@multe.fi</p>
             </address>
           </div>
         </div>
