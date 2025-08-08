@@ -85,7 +85,7 @@ const Safety = () => {
                 <div className="bg-gray-50 p-6 rounded-lg">
                   <p className="mb-2"><strong>Turvallisuuspäällikkö:</strong> Jukka Koskinen</p>
                   <p className="mb-2"><strong>Puhelin:</strong> +358 451509570</p>
-                  <p className="mb-2"><strong>Sähköposti:</strong> turvallisuus@multeoy.fi</p>
+                  <p className="mb-2"><strong>Sähköposti:</strong> info@multe.fi</p>
                   <p className="text-sm text-gray-600 mt-4">
                     Ilmoita heti kaikista turvallisuuteen liittyvistä havainnoista, läheltä piti -tilanteista ja tapaturmista.
                   </p>
