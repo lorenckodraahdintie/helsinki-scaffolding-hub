@@ -24,18 +24,18 @@ const ContactForm = () => {
       [name]: value
     }));
   };
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
-
     try {
-      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+      const {
+        data,
+        error
+      } = await supabase.functions.invoke('send-contact-email', {
         body: formData
       });
-
       if (error) {
         throw error;
       }
-
       toast({
         title: t('toast.sent'),
         description: t('toast.description')
@@ -83,7 +83,7 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <p className="text-white/80 mb-1">{t('contact.email')}</p>
-                    <p className="font-medium">info@multeoy.fi</p>
+                    <p className="font-medium">info@multe.fi</p>
                   </div>
                   <div>
                     <p className="text-white/80 mb-1">{t('contact.hours')}</p>
@@ -123,15 +123,7 @@ const ContactForm = () => {
                   
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">{t('contact.message')}</label>
-                    <textarea 
-                      id="message" 
-                      name="message" 
-                      value={formData.message} 
-                      onChange={handleChange} 
-                      rows={4}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"
-                      placeholder={t('form.message-placeholder')}
-                    />
+                    <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows={4} className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary" placeholder={t('form.message-placeholder')} />
                   </div>
                   
                   <Button type="submit" className="w-full bg-primary hover:bg-primary/90 btn-hover-effect">
