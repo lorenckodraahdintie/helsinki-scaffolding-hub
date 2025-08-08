@@ -1,17 +1,21 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { useLanguage } from '@/contexts/LanguageContext';
 const Safety = () => {
-  return <div className="min-h-screen">
+  const { t } = useLanguage();
+  
+  return (
+    <div className="min-h-screen">
       <Navbar />
       <main className="pt-16">
         <div className="bg-primary text-white py-20">
           <div className="container mx-auto px-4">
             <h1 className="text-4xl md:text-5xl font-bold text-center mb-6">
-              Turvallisuusstandardit
+              {t('safety.title')}
             </h1>
             <p className="text-xl text-center max-w-3xl mx-auto">
-              Turvallisuus on meille ensisijaista - noudatamme tiukkoja standardeja ja ohjeistuksia
+              {t('safety.subtitle')}
             </p>
           </div>
         </div>
@@ -20,74 +24,74 @@ const Safety = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <section className="mb-12">
-                <h2 className="text-3xl font-bold mb-6">Turvallisuusperiaatteet</h2>
-                <p className="text-lg mb-6">Multe Oy sitoutuu ylläpitämään korkeimpia turvallisuusstandardeja kaikissa projekteissaan. Turvallisuus ei ole meille vain sääntöjen noudattamista, vaan se on osa työkulttuuria ja jokapäiväistä toimintaa.</p>
+                <h2 className="text-3xl font-bold mb-6">{t('safety.principles.title')}</h2>
+                <p className="text-lg mb-6">{t('safety.principles.description')}</p>
                 
                 <div className="grid md:grid-cols-2 gap-8 mb-8">
                   <div className="p-6 border-l-4 border-primary bg-gray-50">
-                    <h3 className="text-xl font-semibold mb-3">Henkilöturvallisuus</h3>
-                    <p>Jokainen työntekijä on vastuussa omasta ja työtovereidensa turvallisuudesta. Kaikilla on oikeus ja velvollisuus keskeyttää vaarallinen työ.</p>
+                    <h3 className="text-xl font-semibold mb-3">{t('safety.personal.title')}</h3>
+                    <p>{t('safety.personal.description')}</p>
                   </div>
                   <div className="p-6 border-l-4 border-primary bg-gray-50">
-                    <h3 className="text-xl font-semibold mb-3">Jatkuva koulutus</h3>
-                    <p>Henkilöstömme osallistuu säännöllisesti turvallisuuskoulutuksiin ja pätevyydet pidetään ajan tasalla.</p>
+                    <h3 className="text-xl font-semibold mb-3">{t('safety.training.title')}</h3>
+                    <p>{t('safety.training.description')}</p>
                   </div>
                 </div>
               </section>
 
               <section className="mb-12">
-                <h2 className="text-3xl font-bold mb-6">Standardit ja sertifikaatit</h2>
+                <h2 className="text-3xl font-bold mb-6">{t('safety.standards.title')}</h2>
                 <div className="space-y-6">
                   <div className="border rounded-lg p-6">
-                    <h3 className="text-xl font-semibold mb-3">ISO 9001 Laatujärjestelmä</h3>
-                    <p>Sertifioitu laatujärjestelmä varmistaa palveluidemme laadun ja jatkuvan kehittämisen.</p>
+                    <h3 className="text-xl font-semibold mb-3">{t('safety.iso.title')}</h3>
+                    <p>{t('safety.iso.description')}</p>
                   </div>
                   
                   <div className="border rounded-lg p-6">
-                    <h3 className="text-xl font-semibold mb-3">VTT Sertifikaatti</h3>
-                    <p>VTT:n myöntämä sertifikaatti telinepalveluille takaa korkeimman ammattitaidon.</p>
+                    <h3 className="text-xl font-semibold mb-3">{t('safety.vtt.title')}</h3>
+                    <p>{t('safety.vtt.description')}</p>
                   </div>
                   
                   <div className="border rounded-lg p-6">
-                    <h3 className="text-xl font-semibold mb-3">Työturvallisuus</h3>
-                    <p>Noudatamme Työturvallisuuslakia ja Ratu-ohjeistuksia. Kaikilla työntekijöillä voimassa olevat turvallisuuskortit.</p>
+                    <h3 className="text-xl font-semibold mb-3">{t('safety.workplace.title')}</h3>
+                    <p>{t('safety.workplace.description')}</p>
                   </div>
                 </div>
               </section>
 
               <section className="mb-12">
-                <h2 className="text-3xl font-bold mb-6">Turvallisuustoimenpiteet</h2>
+                <h2 className="text-3xl font-bold mb-6">{t('safety.measures.title')}</h2>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <h3 className="text-lg font-semibold mb-3">Ennen työtä</h3>
+                    <h3 className="text-lg font-semibold mb-3">{t('safety.before.title')}</h3>
                     <ul className="list-disc list-inside space-y-2">
-                      <li>Työmaan turvallisuussuunnittelu</li>
-                      <li>Riskiarviointi</li>
-                      <li>Turvallisuusperehdytys</li>
-                      <li>Varusteiden tarkastus</li>
+                      <li>{t('safety.before.item1')}</li>
+                      <li>{t('safety.before.item2')}</li>
+                      <li>{t('safety.before.item3')}</li>
+                      <li>{t('safety.before.item4')}</li>
                     </ul>
                   </div>
                   
                   <div>
-                    <h3 className="text-lg font-semibold mb-3">Työn aikana</h3>
+                    <h3 className="text-lg font-semibold mb-3">{t('safety.during.title')}</h3>
                     <ul className="list-disc list-inside space-y-2">
-                      <li>Jatkuva turvallisuusvalvonta</li>
-                      <li>Säännölliset tarkastukset</li>
-                      <li>Suojainten käyttö</li>
-                      <li>Turvallisten työmenetelmien noudattaminen</li>
+                      <li>{t('safety.during.item1')}</li>
+                      <li>{t('safety.during.item2')}</li>
+                      <li>{t('safety.during.item3')}</li>
+                      <li>{t('safety.during.item4')}</li>
                     </ul>
                   </div>
                 </div>
               </section>
 
               <section>
-                <h2 className="text-3xl font-bold mb-6">Yhteystiedot turvallisuusasioissa</h2>
+                <h2 className="text-3xl font-bold mb-6">{t('safety.contact.title')}</h2>
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  <p className="mb-2"><strong>Turvallisuuspäällikkö:</strong> Jukka Koskinen</p>
-                  <p className="mb-2"><strong>Puhelin:</strong> +358 451509570</p>
-                  <p className="mb-2"><strong>Sähköposti:</strong> info@multe.fi</p>
+                  <p className="mb-2"><strong>{t('safety.contact.manager')}:</strong> Jukka Koskinen</p>
+                  <p className="mb-2"><strong>{t('safety.contact.phone')}:</strong> +358 451509570</p>
+                  <p className="mb-2"><strong>{t('safety.contact.email')}:</strong> info@multe.fi</p>
                   <p className="text-sm text-gray-600 mt-4">
-                    Ilmoita heti kaikista turvallisuuteen liittyvistä havainnoista, läheltä piti -tilanteista ja tapaturmista.
+                    {t('safety.contact.note')}
                   </p>
                 </div>
               </section>
@@ -96,6 +100,7 @@ const Safety = () => {
         </div>
       </main>
       <Footer />
-    </div>;
+    </div>
+  );
 };
 export default Safety;

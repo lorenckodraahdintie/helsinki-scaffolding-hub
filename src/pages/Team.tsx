@@ -1,17 +1,21 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { useLanguage } from '@/contexts/LanguageContext';
 const Team = () => {
-  return <div className="min-h-screen">
+  const { t } = useLanguage();
+  
+  return (
+    <div className="min-h-screen">
       <Navbar />
       <main className="pt-16">
         <div className="bg-primary text-white py-20">
           <div className="container mx-auto px-4">
             <h1 className="text-4xl md:text-5xl font-bold text-center mb-6">
-              Tiimimme
+              {t('team.title')}
             </h1>
             <p className="text-xl text-center max-w-3xl mx-auto">
-              Kokenut ja ammattitaitoinen tiimi palveluksessanne
+              {t('team.subtitle')}
             </p>
           </div>
         </div>
@@ -23,45 +27,43 @@ const Team = () => {
                 <div className="text-center">
                   <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4"></div>
                   <h3 className="text-xl font-semibold mb-2">Ervin Kodra</h3>
-                  <p className="text-gray-600 mb-2">Toimitusjohtaja</p>
-                  <p className="text-sm">15 vuoden kokemus rakennusalalta. Vastaa yrityksen strategisesta suunnasta ja asiakassuhteista.</p>
+                  <p className="text-gray-600 mb-2">{t('team.ervin.position')}</p>
+                  <p className="text-sm">{t('team.ervin.description')}</p>
                 </div>
                 
                 <div className="text-center">
                   <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4"></div>
                   <h3 className="text-xl font-semibold mb-2">Halit Hasa</h3>
-                  <p className="text-gray-600 mb-2">Toimitusjohtaja / Työmaapäällikkö</p>
-                  <p className="text-sm">8 vuoden kokemus telinetyöstä. Vastaa projektien toteutuksesta ja työmaan turvallisuudesta.</p>
+                  <p className="text-gray-600 mb-2">{t('team.halit.position')}</p>
+                  <p className="text-sm">{t('team.halit.description')}</p>
                 </div>
                 
                 <div className="text-center">
                   <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4"></div>
                   <h3 className="text-xl font-semibold mb-2">Alban Selaci</h3>
-                  <p className="text-gray-600 mb-2">Telineasentaja</p>
-                  <p className="text-sm">6 vuoden kokemus telineasennuksesta. Erikoisosaaja vaativissa teollisuuskohteissa.</p>
+                  <p className="text-gray-600 mb-2">{t('team.alban.position')}</p>
+                  <p className="text-sm">{t('team.alban.description')}</p>
                 </div>
                 
                 <div className="text-center">
                   <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4"></div>
                   <h3 className="text-xl font-semibold mb-2">Klinton Koceku</h3>
-                  <p className="text-gray-600 mb-2">Telineasentaja</p>
-                  <p className="text-sm">4 vuoden kokemus. Vastaa pientalojen ja saneerauskohteiden telineistä.</p>
+                  <p className="text-gray-600 mb-2">{t('team.klinton.position')}</p>
+                  <p className="text-sm">{t('team.klinton.description')}</p>
                 </div>
                 
                 <div className="text-center">
                   <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4"></div>
-                  <h3 className="text-xl font-semibold mb-2">Besim Hyseni
-
-                </h3>
-                  <p className="text-gray-600 mb-2">Telineasentaja</p>
-                  <p className="text-sm">10 vuoden kokemus telinetyöstä. Kokenut ammattilainen kaikenlaisissa projekteissa.</p>
+                  <h3 className="text-xl font-semibold mb-2">Besim Hyseni</h3>
+                  <p className="text-gray-600 mb-2">{t('team.besim.position')}</p>
+                  <p className="text-sm">{t('team.besim.description')}</p>
                 </div>
                 
                 <div className="text-center">
                   <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto mb-4"></div>
                   <h3 className="text-xl font-semibold mb-2">Lorenc Kodra</h3>
-                  <p className="text-gray-600 mb-2">Asiakaspalvelu</p>
-                  <p className="text-sm">Hoitaa asiakaspalvelun ja tarjousten laatimisen. Ensimmäinen kontakti asiakkaille.</p>
+                  <p className="text-gray-600 mb-2">{t('team.lorenc.position')}</p>
+                  <p className="text-sm">{t('team.lorenc.description')}</p>
                 </div>
               </div>
             </div>
@@ -69,6 +71,7 @@ const Team = () => {
         </div>
       </main>
       <Footer />
-    </div>;
+    </div>
+  );
 };
 export default Team;
