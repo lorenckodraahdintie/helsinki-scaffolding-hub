@@ -27,7 +27,7 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('https://yourdomain.com/contact-form-handler.php', {
+      const response = await fetch('https://www.multe.fi/api/contact-form-handler.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
