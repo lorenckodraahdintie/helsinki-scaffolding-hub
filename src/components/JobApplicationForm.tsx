@@ -21,32 +21,34 @@ const JobApplicationForm = ({ jobTitle, children }: JobApplicationFormProps) => 
     setIsSubmitting(true);
 
     const formData = new FormData(e.currentTarget);
-    const applicationData = {
-      name: formData.get('name') as string,
-      email: formData.get('email') as string,
-      phone: formData.get('phone') as string,
-      experience: formData.get('experience') as string,
-      message: formData.get('message') as string,
-      position: jobTitle,
-    };
+    formData.append("position", jobTitle); // ✅ Add job title to submission
 
     try {
-      // Here you would typically send the application data to your backend
-      // For now, we'll just show a success message
-      console.log('Application data:', applicationData);
-      console.log('CV file:', formData.get('cv'));
-
-      toast({
-        title: "Hakemus lähetetty!",
-        description: "Kiitos hakemuksestasi. Otamme sinuun yhteyttä pian.",
+      const response = await fetch("https://www.multe.fi/apply.php", {
+        method: "POST",
+        body: formData,
       });
 
-      setOpen(false);
-      (e.target as HTMLFormElement).reset();
-    } catch (error) {
+      if (response.ok) {
+        const result = await response.json();
+        if (result.success) {
+          toast({
+            title: "Hakemus lähetetty!",
+            description: "Kiitos hakemuksestasi. Otamme sinuun yhteyttä pian.",
+          });
+          setOpen(false);
+          (e.target as HTMLFormElement).reset();
+        } else {
+          throw new Error(result.error || "Tuntematon virhe");
+        }
+      } else {
+        const errorResult = await response.json();
+        throw new Error(errorResult.error || "Lähetys epäonnistui");
+      }
+    } catch (error: any) {
       toast({
         title: "Virhe",
-        description: "Hakemuksen lähettäminen epäonnistui. Yritä uudelleen.",
+        description: error.message || "Hakemuksen lähettäminen epäonnistui. Yritä uudelleen.",
         variant: "destructive",
       });
     } finally {
