@@ -87,7 +87,7 @@ const Safety = () => {
               <section>
                 <h2 className="text-3xl font-bold mb-6">{t('safety.contact.title')}</h2>
                 <div className="bg-gray-50 p-6 rounded-lg">
-                  <p className="mb-2"><strong>{t('safety.contact.manager')}:</strong> Jukka Koskinen</p>
+                  <p className="mb-2"><strong>{t('safety.contact.manager')}:</strong> Halit Hasa</p>
                   <p className="mb-2"><strong>{t('safety.contact.phone')}:</strong> +358 451509570</p>
                   <p className="mb-2"><strong>{t('safety.contact.email')}:</strong> info@multe.fi</p>
                   <p className="text-sm text-gray-600 mt-4">
