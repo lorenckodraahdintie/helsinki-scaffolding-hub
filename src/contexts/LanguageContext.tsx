@@ -53,6 +53,21 @@ const translations = {
     'toast.sent': 'Tarjouspyyntö lähetetty',
     'toast.description': 'Kiitos! Otamme sinuun yhteyttä 24 tunnin kuluessa.',
     
+    // About page
+    'about.subtitle': 'Ammattimaisia telinepalveluja jo vuodesta 2010',
+    'about.history.title': 'Yrityksen historia',
+    'about.history.desc1': 'Multe Oy on perustettu vuonna 2010 tarjoamaan laadukkaita telinepalveluja Helsingin ja lähialueiden rakennusprojekteihin. Olemme kasvaneet pienestä perheyrityksestä luotettavaksi kumppaniksi niin yksityisille asiakkaille kuin suurille rakennusliikkeille.',
+    'about.history.desc2': 'Erikoisosaamistamme ovat rakennustelineet, saneerauskohteet sekä teollisuuden vaativat telineprojektit. Turvallisuus ja laatu ovat toimintamme kulmakivet.',
+    'about.values.title': 'Arvomme',
+    'about.values.safety.title': 'Turvallisuus',
+    'about.values.safety.description': 'Turvallisuus on meille ensisijaista. Noudatamme tiukkoja turvallisuusstandardeja ja koulutamme henkilöstömme jatkuvasti.',
+    'about.values.quality.title': 'Laatu',
+    'about.values.quality.description': 'Käytämme vain laadukkaita materiaaleja ja moderneja telinejärjestelmiä varmistaaksemme parhaan mahdollisen lopputuloksen.',
+    'about.values.reliability.title': 'Luotettavuus',
+    'about.values.reliability.description': 'Pidämme aikatauluista kiinni ja toimitamme aina lupaamamme. Asiakkaamme voivat luottaa meihin.',
+    'about.values.expertise.title': 'Ammattitaito',
+    'about.values.expertise.description': 'Kokenut tiimimme hallitsee kaikki telinetyön osa-alueet pienistä korjauksista suuriin teollisuusprojekteihin.',
+
     // Team page
     'team.title': 'Tiimimme',
     'team.subtitle': 'Kokenut ja ammattitaitoinen tiimi palveluksessanne',
@@ -174,6 +189,21 @@ const translations = {
     'toast.sent': 'Quote request sent',
     'toast.description': 'Thank you! We will contact you within 24 hours.',
     
+    // About page
+    'about.subtitle': 'Professional scaffolding services since 2010',
+    'about.history.title': 'Company History',
+    'about.history.desc1': 'Multe Oy was founded in 2010 to provide quality scaffolding services for construction projects in Helsinki and surrounding areas. We have grown from a small family business to a trusted partner for both private customers and large construction companies.',
+    'about.history.desc2': 'Our specialties include building scaffolding, renovation projects and demanding industrial scaffolding projects. Safety and quality are the cornerstones of our operations.',
+    'about.values.title': 'Our Values',
+    'about.values.safety.title': 'Safety',
+    'about.values.safety.description': 'Safety is our top priority. We follow strict safety standards and continuously train our staff.',
+    'about.values.quality.title': 'Quality',
+    'about.values.quality.description': 'We use only quality materials and modern scaffolding systems to ensure the best possible result.',
+    'about.values.reliability.title': 'Reliability',
+    'about.values.reliability.description': 'We stick to schedules and always deliver what we promise. Our customers can rely on us.',
+    'about.values.expertise.title': 'Expertise',
+    'about.values.expertise.description': 'Our experienced team masters all aspects of scaffolding work from small repairs to large industrial projects.',
+
     // Team page
     'team.title': 'Our Team',
     'team.subtitle': 'Experienced and professional team at your service',
