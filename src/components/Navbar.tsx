@@ -47,7 +47,12 @@ const Navbar = () => {
             >
               {t('nav.services')}
             </button>
-            <Link to="/about" className="text-gray-700 hover:text-primary font-medium">{t('nav.about')}</Link>
+            <button 
+              onClick={() => handleSectionNavigation('about')}
+              className="text-gray-700 hover:text-primary font-medium"
+            >
+              {t('nav.about')}
+            </button>
             <button 
               onClick={() => handleSectionNavigation('contact')}
               className="text-gray-700 hover:text-primary font-medium"
@@ -87,7 +92,12 @@ const Navbar = () => {
             >
               {t('nav.services')}
             </button>
-            <Link to="/about" className="block text-gray-700 hover:text-primary font-medium py-2" onClick={() => setIsMenuOpen(false)}>{t('nav.about')}</Link>
+            <button 
+              onClick={() => { handleSectionNavigation('about'); setIsMenuOpen(false); }}
+              className="block text-gray-700 hover:text-primary font-medium py-2 text-left"
+            >
+              {t('nav.about')}
+            </button>
             <button 
               onClick={() => { handleSectionNavigation('contact'); setIsMenuOpen(false); }}
               className="block text-gray-700 hover:text-primary font-medium py-2 text-left"

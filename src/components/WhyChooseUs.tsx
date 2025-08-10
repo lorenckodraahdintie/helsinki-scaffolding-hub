@@ -52,7 +52,7 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="why-choose-us" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center">
           <div className="lg:w-1/2 lg:pr-12 mb-10 lg:mb-0">
