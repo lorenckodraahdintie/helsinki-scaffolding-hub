@@ -140,6 +140,13 @@ const ContactForm = () => {
                   <p>Y-tunnus: 2543079-8</p>
                   <p>Helsinki, Finland</p>
                   <p>info@multe.fi</p>
+
+                  <p className="font-semibold mt-4">Verkkolaskut</p>
+                  <p>Verkkolaskut: Multe Oy</p>
+                  <p>Operaattori: Maventa (003721291126)</p>
+                  <p>Verkkolaskuosoite: 003723028022</p>
+                  <p>OVT-tunnus: 003723028022</p>
+                  <p>Pyydämme huomioimaan, että laskulla on Multe Oy-n yhteyshenkilön nimi tai meidän viitteemme sekä laskuun kuuluvat liitteet. Nämä toimenpiteet helpottavat laskujen käsittelyä meillä merkittävästi. Ilman näitä tietoja olevat laskut palautetaan, emmekä tällöin vastaa mahdollisista viivästys- tai muista kuluista.</p>
                 </div>
               </div>
             </div>
