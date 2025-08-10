@@ -135,7 +135,7 @@ const ContactForm = () => {
 
               <div className="mt-8 p-6 bg-white rounded-lg border">
                 <h4 className="font-semibold mb-4">{t('contact.billing')}</h4>
-                <div className="space-y-2 text-sm">
+                <div className="grid sm:grid-cols-2 gap-x-6 gap-y-2 text-sm">
                   <p><strong>Multe Oy</strong></p>
                   <p>Y-tunnus: 2543079-8</p>
                   <p>Helsinki, Finland</p>
@@ -146,7 +146,7 @@ const ContactForm = () => {
                   <p>Operaattori: Maventa (003721291126)</p>
                   <p>Verkkolaskuosoite: 003723028022</p>
                   <p>OVT-tunnus: 003723028022</p>
-                  <p>Pyydämme huomioimaan, että laskulla on Multe Oy-n yhteyshenkilön nimi tai meidän viitteemme sekä laskuun kuuluvat liitteet. Nämä toimenpiteet helpottavat laskujen käsittelyä meillä merkittävästi. Ilman näitä tietoja olevat laskut palautetaan, emmekä tällöin vastaa mahdollisista viivästys- tai muista kuluista.</p>
+                  <p className="sm:col-span-2">Pyydämme huomioimaan, että laskulla on Multe Oy-n yhteyshenkilön nimi tai meidän viitteemme sekä laskuun kuuluvat liitteet. Nämä toimenpiteet helpottavat laskujen käsittelyä meillä merkittävästi. Ilman näitä tietoja olevat laskut palautetaan, emmekä tällöin vastaa mahdollisista viivästys- tai muista kuluista.</p>
                 </div>
               </div>
             </div>
