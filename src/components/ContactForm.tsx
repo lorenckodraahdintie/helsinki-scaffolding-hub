@@ -53,9 +53,12 @@ const ContactForm: React.FC = () => {
 
     setIsSubmitting(true);
     try {
-      const res = await fetch("/api/contact-form-handler.php", {
+      const res = await fetch("/functions/v1/send-contact-email", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { 
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY || ''}`
+        },
         body: JSON.stringify(formData),
       });
 
