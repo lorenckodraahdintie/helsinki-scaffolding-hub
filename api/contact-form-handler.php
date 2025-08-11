@@ -1,59 +1,61 @@
 <?php
-// Enable CORS (optional for testing, secure it for production)
+// api/contact-form-handler.php
+header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Content-Type");
 header("Access-Control-Allow-Methods: POST");
 
-// Only allow POST
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     http_response_code(405);
     echo json_encode(["error" => "Method Not Allowed"]);
     exit;
 }
 
-// Parse JSON body
-$rawData = file_get_contents("php://input");
-$data = json_decode($rawData, true);
-
-// Validate required fields
-$requiredFields = ['name', 'email', 'phone', 'projectType', 'message'];
-foreach ($requiredFields as $field) {
-    if (empty($data[$field])) {
-        http_response_code(400);
-        echo json_encode(["error" => "Missing field: $field"]);
-        exit;
-    }
+// Support JSON and form-encoded bodies
+$raw = file_get_contents("php://input");
+$data = json_decode($raw, true);
+if (!is_array($data)) {
+    // Fallback to form fields
+    $data = $_POST;
 }
 
-// Sanitize inputs
-$name = htmlspecialchars($data['name']);
-$email = filter_var($data['email'], FILTER_SANITIZE_EMAIL);
-$phone = htmlspecialchars($data['phone']);
-$projectType = htmlspecialchars($data['projectType']);
-$message = htmlspecialchars($data['message']);
+// Helper: sanitize simple text (avoid header injection)
+function clean($v) {
+    $v = trim($v ?? "");
+    $v = str_replace(["\r", "\n"], " ", $v);
+    return filter_var($v, FILTER_SANITIZE_STRING);
+}
 
-// Compose the email
-$to = "info@multe.fi";
-$subject = "New Contact Form Submission";
-$headers = "From: noreply@multe.fi\r\n";
-$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+$name        = clean($data["name"] ?? "");
+$email       = trim($data["email"] ?? "");
+$phone       = clean($data["phone"] ?? "");
+$projectType = clean($data["projectType"] ?? "");
+$message     = trim($data["message"] ?? "");
 
-$body = <<<EOD
-You have received a new message from the contact form:
+// Basic validation
+$errors = [];
+if ($name === "")   { $errors[] = "Name is required"; }
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) { $errors[] = "Valid email is required"; }
+if ($message === "") { $errors[] = "Message is required"; }
 
-Name: $name
-Email: $email
-Phone: $phone
-Project Type: $projectType
-Message:
-$message
-EOD;
+if ($errors) {
+    http_response_code(400);
+    echo json_encode(["error" => "Validation failed", "details" => $errors]);
+    exit;
+}
 
-// Send the email
-if (mail($to, $subject, $body, $headers)) {
-    echo json_encode(["success" => true, "message" => "Message sent successfully."]);
+// Build email
+$to      = "info@multe.fi"; // <-- change if needed
+$subject = "New Contact Form Submission from {$name}";
+$body = "Name: {$name}\nEmail: {$email}\nPhone: {$phone}\nProject Type: {$projectType}\n\nMessage:\n{$message}\n";
+$headers = "From: noreply@multe.fi\r\n" .
+           "Reply-To: {$email}\r\n" .
+           "X-Mailer: PHP/" . phpversion();
+
+// Try to send
+if (@mail($to, $subject, $body, $headers)) {
+    echo json_encode(["success" => true, "message" => "Message sent"]);
 } else {
     http_response_code(500);
-    echo json_encode(["error" => "Failed to send email."]);
+    echo json_encode(["error" => "Failed to send email (mail() returned false). Check server mail config or use authenticated SMTP/PHPMailer)."]);
 }
-?>
