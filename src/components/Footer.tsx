@@ -24,10 +24,10 @@ const Footer = () => {
           <div>
             <h4 className="text-xl font-bold mb-6">Yritys</h4>
             <ul className="space-y-3">
-              <li><a href="/about" className="text-gray-400 hover:text-white transition-colors">Meistä</a></li>
-              <li><a href="/team" className="text-gray-400 hover:text-white transition-colors">Tiimimme</a></li>
-              <li><a href="/jobs" className="text-gray-400 hover:text-white transition-colors">Työpaikat</a></li>
-              <li><a href="/safety" className="text-gray-400 hover:text-white transition-colors">Turvallisuusstandardit</a></li>
+              <li><a href="/#about" className="text-gray-400 hover:text-white transition-colors">Meistä</a></li>
+              <li><a href="/#team" className="text-gray-400 hover:text-white transition-colors">Tiimimme</a></li>
+              <li><a href="/#jobs" className="text-gray-400 hover:text-white transition-colors">Työpaikat</a></li>
+              <li><a href="/#safety" className="text-gray-400 hover:text-white transition-colors">Turvallisuusstandardit</a></li>
             </ul>
           </div>
           
