@@ -20,7 +20,7 @@ const initialState: FormState = {
 };
 
 const ContactForm: React.FC = () => {
-  const { t } = useLanguage ? useLanguage() : { t: (k: string) => k };
+  const { t } = useLanguage();
   const [formData, setFormData] = useState<FormState>(initialState);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -44,7 +44,7 @@ const ContactForm: React.FC = () => {
     const errors = validate();
     if (errors.length) {
       toast({
-        title: t ? t("contact.validationTitle") : "Please fix the errors",
+        title: t("contact.validationTitle") || "Please fix the errors",
         description: errors.join(" • "),
         variant: "destructive",
       });
@@ -53,11 +53,11 @@ const ContactForm: React.FC = () => {
 
     setIsSubmitting(true);
     try {
-      const res = await fetch("/functions/v1/send-contact-email", {
+      const res = await fetch("https://gpbbpwnhmxxewaddlwxs.supabase.co/functions/v1/send-contact-email", {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY || ''}`
+          "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdwYmJwd25obXh4ZXdhZGRsd3hzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQzOTAwNzksImV4cCI6MjA2OTk2NjA3OX0.Dod6CCo0yj_sZF0YKxP8V6aNLhxMnjXM3ISKFJ6k6Ig`
         },
         body: JSON.stringify(formData),
       });
@@ -68,14 +68,14 @@ const ContactForm: React.FC = () => {
       }
 
       toast({
-        title: t ? t("toast.sent") : "Sent",
-        description: t ? t("contact.sentDesc") : "Your message has been sent.",
+        title: t("toast.sent") || "Sent",
+        description: t("contact.sentDesc") || "Your message has been sent.",
       });
       setFormData(initialState);
     } catch (err: any) {
       toast({
-        title: t ? t("toast.error") : "Error",
-        description: err?.message || (t ? t("contact.errorDesc") : "Could not send your message."),
+        title: t("toast.error") || "Error",
+        description: err?.message || t("contact.errorDesc") || "Could not send your message.",
         variant: "destructive",
       });
     } finally {
@@ -88,10 +88,10 @@ const ContactForm: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            {t ? t("contact.title") : "Contact Us"}
+            {t("contact.title") || "Contact Us"}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            {t ? t("contact.subtitle") : "Get in touch with us for your next project"}
+            {t("contact.subtitle") || "Get in touch with us for your next project"}
           </p>
         </div>
         
@@ -99,7 +99,7 @@ const ContactForm: React.FC = () => {
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <h3 className="text-2xl font-bold mb-6">
-                {t ? t("contact.formTitle") : "Send us a message"}
+                {t("contact.formTitle") || "Send us a message"}
               </h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
